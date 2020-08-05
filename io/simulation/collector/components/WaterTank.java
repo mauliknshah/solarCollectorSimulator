@@ -11,7 +11,7 @@ public class WaterTank {
     double tankHeatEnergyInJ;
     double tankHeatLossPerSecondInPercent;
     
-    WaterTank ( double tankVolumeInL, double waterVolumeInL, double tankInHeightInM,
+    public WaterTank ( double tankVolumeInL, double waterVolumeInL, double tankInHeightInM,
                 double tankOutHeightInM, double tankTempK, double tankHeatEnergyInJ,
                 double tankHeatLossPerSecondInPercent){
         

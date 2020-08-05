@@ -5,7 +5,7 @@ public class SolarCollector {
     double areaSqM;
     double efficiency;
 
-    SolarCollector(double areaSqM, double efficiency){
+    public SolarCollector(double areaSqM, double efficiency){
         this.areaSqM = areaSqM;
         this.efficiency = efficiency;
     }
