@@ -17,8 +17,8 @@ public class SolarDataGenerator {
     }
 
     public void generate(){
-        this.solarRadiation += (-1*solarRadiation*fluctuation) + Math.random() * 2 * solarRadiation * solarRadiation;
-        this.ambientTemperature += (-1*ambientTemperature*fluctuation) + Math.random() * 2 * ambientTemperature * solarRadiation;
+        this.solarRadiation += (-1*solarRadiation*fluctuation) + (Math.random() * 2 * solarRadiation *fluctuation);
+        this.ambientTemperature += (-1*ambientTemperature*fluctuation) + (Math.random() * 2 * ambientTemperature *fluctuation);
     }
 
     public double getAmbientTemperature() {
