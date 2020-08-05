@@ -10,7 +10,9 @@ public class WaterTank {
     double tankTempK;
     double tankHeatEnergyInJ;
     double tankHeatLossPerSecondInPercent;
-    
+
+    double initialTempK;
+
     public WaterTank ( double tankVolumeInL, double waterVolumeInL, double tankInHeightInM,
                 double tankOutHeightInM, double tankTempK, double tankHeatEnergyInJ,
                 double tankHeatLossPerSecondInPercent){
@@ -47,6 +49,45 @@ public class WaterTank {
         this.tankTempK += (heatInJ)/ this.waterVolumeInL * this.WATER_HEAT_CAPACITY;
     }
 
+    public double getTankPumpingHeight(){
+        return this.tankInHeightInM - this.tankOutHeightInM;
+    }
 
+    public void reset(){
+        this.tankTempK = this.initialTempK;
+        this.tankHeatEnergyInJ = 0;
+        this.waterVolumeInL = this.tankVolumeInL;
+    }
 
+    public double getTankTempK() {
+        return tankTempK;
+    }
+
+    public double getTankVolumeInL() {
+        return tankVolumeInL;
+    }
+
+    public double getWaterVolumeInL() {
+        return waterVolumeInL;
+    }
+
+    public double getTankInHeightInM() {
+        return tankInHeightInM;
+    }
+
+    public double getTankOutHeightInM() {
+        return tankOutHeightInM;
+    }
+
+    public double getTankHeatEnergyInJ() {
+        return tankHeatEnergyInJ;
+    }
+
+    public double getTankHeatLossPerSecondInPercent() {
+        return tankHeatLossPerSecondInPercent;
+    }
+
+    public double getInitialTempK() {
+        return initialTempK;
+    }
 }

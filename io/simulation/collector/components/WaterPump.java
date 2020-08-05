@@ -5,7 +5,7 @@ public class WaterPump {
     static final double METER_TO_FOOT = 3.28084;
     static final double FLOW_CONSTANT = 3960;
 
-    double powerHP;
+    private double powerHP;
 
     public WaterPump(double powerHP){
         this.powerHP = powerHP;
