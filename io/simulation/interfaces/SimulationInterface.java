@@ -1,4 +1,4 @@
-package io.simulation;
+package io.simulation.interfaces;
 
 public interface SimulationInterface {
     public void step();
