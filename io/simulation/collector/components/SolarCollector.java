@@ -1,6 +1,7 @@
 package io.simulation.collector.components;
 
 public class SolarCollector {
+    static final double WATER_HEAT_CAPACITY = 4182;
     double areaSqM;
     double efficiency;
 
@@ -9,23 +10,11 @@ public class SolarCollector {
         this.efficiency = efficiency;
     }
 
-    public double getAreaSqM() {
-        return areaSqM;
-    }
-
-    public void setAreaSqM(double areaSqM) {
-        this.areaSqM = areaSqM;
-    }
-
-    public double getEfficiency() {
-        return efficiency;
-    }
-
-    public void setEfficiency(double efficiency) {
-        this.efficiency = efficiency;
-    }
-
     public double solarHeatGeneration(double solarRadiationWattPerMSq){
         return this.areaSqM * this.efficiency * solarRadiationWattPerMSq;
+    }
+
+    public double heatTemparatureOutInK(double solarHeatInJ, double tempInK, double waterVolumeInL){
+        return tempInK + (solarHeatInJ / (waterVolumeInL * WATER_HEAT_CAPACITY));
     }
 }
