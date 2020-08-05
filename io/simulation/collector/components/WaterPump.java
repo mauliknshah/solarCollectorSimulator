@@ -1,7 +1,7 @@
 package io.simulation.collector.components;
 
 public class WaterPump {
-    static final double GPM_TO_MLPS = 0.0630902 * 1000;
+    static final double GPM_TO_LPS = 0.0630902;
     double powerHP;
 
     WaterPump(double powerHP){
@@ -16,7 +16,7 @@ public class WaterPump {
         this.powerHP = powerHP;
     }
 
-    public double pumpFlowMLPerSecond(double verticalDistanceFoot, double frictionLossFoot){
-        return  3960 * this.powerHP * GPM_TO_MLPS / (verticalDistanceFoot + frictionLossFoot + 0.1);
+    public double pumpFlowLPerSecond(double verticalDistanceFoot, double frictionLossFoot){
+        return  3960 * this.powerHP * GPM_TO_LPS / (verticalDistanceFoot + frictionLossFoot + 0.1);
     }
 }
