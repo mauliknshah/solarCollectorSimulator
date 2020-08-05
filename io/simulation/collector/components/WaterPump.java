@@ -6,9 +6,11 @@ public class WaterPump {
     static final double FLOW_CONSTANT = 3960;
 
     private double powerHP;
+    private double pumpEfficiency;
 
-    public WaterPump(double powerHP){
+    public WaterPump(double powerHP, double pumpEfficiency){
         this.powerHP = powerHP;
+        this.pumpEfficiency = pumpEfficiency;
     }
 
     double getPowerHP() {
@@ -20,7 +22,7 @@ public class WaterPump {
     }
 
     public double pumpFlowLPerSecond(double verticalDistance, double frictionLoss){
-        return  FLOW_CONSTANT * this.powerHP * GPM_TO_LPS / (meterToFoot(verticalDistance) + meterToFoot(frictionLoss) + 0.1);
+        return  FLOW_CONSTANT * this.pumpEfficiency * this.powerHP * GPM_TO_LPS / (meterToFoot(verticalDistance + frictionLoss) + 0.1);
     }
 
     private double meterToFoot(double meterValue){
