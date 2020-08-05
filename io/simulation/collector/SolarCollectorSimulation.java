@@ -13,17 +13,19 @@ public class SolarCollectorSimulation implements SimulationInterface {
     private WaterTank waterTank;
 
 
+
     public SolarCollectorSimulation(double collectorAreaSqM, double collectorEfficiency,
                                     double transmissionLossPerSecond, double transmissionFrictionInM,
                                     double transmissionVolumeFromPumpToTank, double pumpPowerHP,
                                     double tankVolumeInL, double waterVolumeInL, double tankInHeightInM,
-                                    double tankOutHeightInM, double tankTempK, double tankHeatEnergyInJ,
-                                    double tankHeatLossPerSecondInPercent){
+                                    double tankOutHeightInM, double tankHeatEnergyInJ,
+                                    double tankHeatLossPerSecondInPercent, double initialAmbientTemp,
+                                    double initialSolarRadiation){
         this.solarCollector = new SolarCollector(collectorAreaSqM, collectorEfficiency);
         this.transmission = new Transmission(transmissionLossPerSecond, transmissionFrictionInM, transmissionVolumeFromPumpToTank);
         this.waterPump = new WaterPump(pumpPowerHP);
         this.waterTank = new WaterTank(tankVolumeInL,waterVolumeInL,tankInHeightInM, tankOutHeightInM,
-                tankTempK,tankHeatEnergyInJ, tankHeatLossPerSecondInPercent);
+                initialAmbientTemp,tankHeatEnergyInJ, tankHeatLossPerSecondInPercent);
     }
 
 
