@@ -1,14 +1,17 @@
 package io.simulation.collector;
 
-import io.simulation.collector.components.SolarCollector;
 
 public class SolarDataGenerator {
+    private double initialAmbientTemperature;
+    private double initialSolarRadiation;
     private double ambientTemperature;
     private double solarRadiation;
     private double fluctuation;
 
     public SolarDataGenerator(double ambientTemperature,double solarRadiation, double fluctuation){
+        this.initialAmbientTemperature = ambientTemperature;
         this.ambientTemperature = ambientTemperature;
+        this.initialSolarRadiation = solarRadiation;
         this.solarRadiation = solarRadiation;
         this.fluctuation = fluctuation;
     }
@@ -28,5 +31,9 @@ public class SolarDataGenerator {
 
     public double getFluctuation() {
         return fluctuation;
+    }
+    public void reset(){
+        this.ambientTemperature = this.initialAmbientTemperature;
+        this.solarRadiation = this.initialSolarRadiation;
     }
 }
