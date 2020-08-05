@@ -24,4 +24,8 @@ public class SolarCollector {
     public void setEfficiency(double efficiency) {
         this.efficiency = efficiency;
     }
+
+    public double solarHeatGeneration(double solarRadiationWattPerMSq){
+        return this.areaSqM * this.efficiency * solarRadiationWattPerMSq;
+    }
 }
